@@ -19,8 +19,8 @@ export const fonts = {
     mobile: { size: 14, height: 16 },
   },
   p1Paragraph: {
-    laptop: { size: 16, height: 24 },
-    mobile: { size: 16, height: 24 },
+    laptop: { size: 18, height: 21 },
+    mobile: { size: 18, height: 21 },
   },
   p2Paragraph: {
     laptop: { size: 14, height: 22 },
