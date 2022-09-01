@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
+
 import {
   InputForm,
   InputHolder,
@@ -67,5 +69,35 @@ const Input = React.forwardRef(
     );
   }
 );
+
+Input.displayName = "Input";
+
+Input.propTypes = {
+  id: PropTypes.string.isRequired,
+  label: PropTypes.string,
+  name: PropTypes.string,
+  onChange: PropTypes.func,
+  onFocus: PropTypes.func,
+  placeholder: PropTypes.string,
+  type: PropTypes.oneOf([
+    "email",
+    "number",
+    "password",
+    "search",
+    "tel",
+    "text",
+    "url",
+  ]),
+  value: PropTypes.string,
+};
+
+Input.defaultProps = {
+  label: "Label",
+  onChange: () => {},
+  onFocus: undefined,
+  placeholder: "",
+  type: "text",
+  value: "",
+};
 
 export default Input;
