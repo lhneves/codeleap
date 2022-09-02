@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { rem, colors } from "../../styles/variables";
+import { rem, colors, mediaQuery } from "../../styles/variables";
 import fonts from "../../styles/typography";
 import { Form } from 'formik';
 
@@ -10,7 +10,11 @@ export const Container = styled.div`
   background-color: ${colors.white};
   border: ${rem(1)} solid ${colors.primary};
 
-  width: ${({ edit }) => edit && rem(723)};
+  ${mediaQuery('laptop')} {
+    width: ${({ edit }) => edit && rem(723)};
+  }
+
+  width:${({ edit }) => edit && '80vw'};;
 `;
 
 export const Title = styled.h1`

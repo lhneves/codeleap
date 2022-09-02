@@ -1,9 +1,13 @@
 import styled from "@emotion/styled";
-import { rem, colors } from "../../styles/variables";
+import { rem, colors, mediaQuery } from "../../styles/variables";
 import fonts from "../../styles/typography";
 
 export const Container = styled.div`
-  width:  ${rem(661)};
+  ${mediaQuery('laptop')} {
+    width: ${rem(661)};
+  }
+
+  width: 80vw;
   display: flex;
   flex-direction: column;
   background-color: ${colors.white};
