@@ -51,7 +51,7 @@ export const LabelForm = styled.label`
   color: ${colors.tertiary};
   max-width: 100%;
   overflow: hidden;
-  padding: 6px 11px;
+  padding: ${rem(6)} ${rem(11)};
   position: absolute;
   text-overflow: ellipsis;
   top: ${({ active }) => rem(active ? -13 : 0)};

@@ -30,7 +30,7 @@ export const Holder = styled.button`
       : model === "filled"
       ? colors.white
       : setColor(theme)};
-  cursor: pointer;
+  cursor: ${({disabled}) => disabled ? 'default' : 'pointer'};
   display: flex;
   gap: ${rem(16)};
   justify-content: center;
