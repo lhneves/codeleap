@@ -54,7 +54,7 @@ export const LabelForm = styled.label`
   padding: ${rem(6)} ${rem(11)};
   position: absolute;
   text-overflow: ellipsis;
-  top: ${({ active }) => rem(active ? -13 : 0)};
+  top: ${({ active }) => rem(active ? -22 : 0)};
   transition: all linear 0.1s;
   white-space: nowrap;
 

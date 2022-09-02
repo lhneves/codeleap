@@ -1,10 +1,14 @@
 import styled from "@emotion/styled";
-import { rem, colors } from "../../styles/variables";
+import { rem, colors, mediaQuery } from "../../styles/variables";
 import fonts from "../../styles/typography";
 import { Form } from 'formik';
 
 export const Container = styled.div`
-  width:  ${rem(500)};
+  ${mediaQuery('laptop')} {
+    width: ${rem(500)};
+  }
+
+  width: 80vw;
   display: flex;
   flex-direction: column;
   background-color: ${colors.white};
