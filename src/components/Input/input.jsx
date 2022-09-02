@@ -86,6 +86,7 @@ Input.propTypes = {
     "search",
     "tel",
     "text",
+    "textarea",
     "url",
   ]),
   value: PropTypes.string,

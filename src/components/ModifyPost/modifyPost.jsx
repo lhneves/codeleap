@@ -12,15 +12,15 @@ const ModifyPost = ({ onSubmit, edit = false }) => {
       <Title>{edit ? "Edit item" : "What’s on your mind?"}</Title>
       <div style={{ marginBottom: `${rem(19)}` }}>
         <Subtitle>Title</Subtitle>
-        <Input label="" placeholder="Hello world" />
+        <Input id="title" label="" placeholder="Hello world" />
       </div>
       <div style={{ marginBottom: `${rem(35)}` }}>
         <Subtitle>Content</Subtitle>
-        <Input label="" placeholder="Content here" type="textarea" />
+        <Input id="content" label="" placeholder="Content here" type="textarea" />
       </div>
       <div style={{ display: "flex", justifyContent: "flex-end" }}>
         <Button
-          type={"filled"}
+          model={"filled"}
           theme="black"
           text={edit ? "SAVE" : "CREATE"}
           onClick={onSubmit}
