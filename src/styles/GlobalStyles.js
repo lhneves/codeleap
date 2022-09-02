@@ -1,6 +1,7 @@
 import { css } from '@emotion/react';
 import typography from './typography';
 import { colors } from './variables';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const globalStyles = () => css`
   *,
@@ -45,6 +46,10 @@ export const globalStyles = () => css`
 
   h1 {
     ${typography.h1Headline()};
+  }
+
+  body .Toastify .Toastify__toast-container .Toastify__toast--success {
+    ${typography.s2Subtitle()};
   }
 
 `;
