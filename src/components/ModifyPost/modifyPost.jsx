@@ -125,7 +125,7 @@ const ModifyPost = ({ edit = false, id = null, hasEdited = false }) => {
         <Button
           model="filled"
           theme={(!!values.title && !!values.content) ? "black" : "primary"}
-          text="ENTER"
+          text={edit ? "SAVE" : "ENTER"}
           type="submit"
           disabled={!(!!values.title && !!values.content)}
         />
