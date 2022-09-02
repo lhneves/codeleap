@@ -9,10 +9,9 @@ import {
 } from "./input.style";
 
 const Input = React.forwardRef(
-  ({ id, label, name, onChange, onFocus, placeholder, type, value }, ref) => {
+  ({ id, label, name, onChange, placeholder, type, value }, ref) => {
     const [textareaHeight, setTextareaHeight] = useState(23);
     const [activeLabel, setActiveLabel] = useState(!!value);
-    const [inputValue, setInputValue] = useState(value);
 
     const handleChange = (e) => {
       if (e.target.value) {
@@ -20,7 +19,6 @@ const Input = React.forwardRef(
       } else {
         setTextareaHeight(Math.round(23));
       }
-      setInputValue(e.target.value);
       onChange(e);
     };
 
@@ -37,10 +35,6 @@ const Input = React.forwardRef(
               const isEmpty = target.value === "";
               if (isEmpty) setActiveLabel(false);
             }}
-            onFocus={(e) => {
-              onFocus && onFocus(e);
-              setActiveLabel(true);
-            }}
             onMouseOver={() => {
               setActiveLabel(true);
             }}
@@ -53,7 +47,7 @@ const Input = React.forwardRef(
             placeholder={placeholder}
             ref={ref}
             type={type}
-            value={inputValue}
+            value={value}
           />
         </InputHolder>
         <LabelForm
@@ -77,7 +71,6 @@ Input.propTypes = {
   label: PropTypes.string,
   name: PropTypes.string,
   onChange: PropTypes.func,
-  onFocus: PropTypes.func,
   placeholder: PropTypes.string,
   type: PropTypes.oneOf([
     "email",
