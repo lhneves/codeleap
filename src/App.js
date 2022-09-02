@@ -3,6 +3,8 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { globalStyles } from "./styles/GlobalStyles";
 import { Global } from "@emotion/react";
 
+import { ToastContainer } from "react-toastify";
+
 import Header from "./components/Header/header";
 
 import { Provider } from "react-redux";
@@ -18,6 +20,7 @@ function App() {
         <PersistGate persistor={persistor}>
           <Header />
           <Global styles={globalStyles} />
+          <ToastContainer autoClose={3000} className="toast-container" />
           <MyRoutes />
         </PersistGate>
       </Provider>
