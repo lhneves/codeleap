@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
 
@@ -12,27 +13,31 @@ import {
   PostText,
 } from "./post.style";
 
-const Post = ({ user, title, text, date, onEdit, onDelete }) => {
+const Post = ({ username, title, text, date, onEdit, onDelete }) => {
+  const user = useSelector((state) => state.auth.user);
+
   return (
     <Container>
       <Nav>
         <Title>{title}</Title>
-        <div>
-          <FaTrashAlt
-            onClick={onEdit}
-            size={23}
-            style={{ margin: "0 23px", cursor: "pointer", color: "white" }}
-          />
-          <FaEdit
-            onClick={onDelete}
-            size={23}
-            style={{ cursor: "pointer", color: "white" }}
-          />
-        </div>
+        {username === user && (
+          <div>
+            <FaTrashAlt
+              onClick={onDelete}
+              size={23}
+              style={{ margin: "0 23px", cursor: "pointer", color: "white" }}
+            />
+            <FaEdit
+              onClick={onEdit}
+              size={23}
+              style={{ cursor: "pointer", color: "white" }}
+            />
+          </div>
+        )}
       </Nav>
       <ContentContainer>
         <InfoContainer>
-          <Info>{user}</Info>
+          <Info>@{username}</Info>
           <Info>{date}</Info>
         </InfoContainer>
         
